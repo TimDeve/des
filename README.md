@@ -29,5 +29,17 @@
    (println* name-two)
    (println* wow-one)
    (println* wow-two)))
-```
 
+; Can also act like `let`
+(des [example (AnExample.init 1 2)
+      [wow-one wow-two] (AnExample.init 6 3)]
+  (do 
+   (println* example)
+   (println* wow-one)
+   (println* wow-two)))
+
+; Don't have to use everything
+(des [(field-two) (AnExample.init 1 2)]
+  (do 
+   (println* field-two)))
+```
